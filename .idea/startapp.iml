@@ -24,5 +24,6 @@
     <orderEntry type="library" name="@types/jsonwebtoken" level="application" />
     <orderEntry type="library" name="@types/passport" level="application" />
     <orderEntry type="library" name="@types/passport-jwt" level="application" />
+    <orderEntry type="library" name="@types/multer" level="application" />
   </component>
 </module>
