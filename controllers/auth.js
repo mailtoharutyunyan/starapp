@@ -1,14 +1,31 @@
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const User = require('../models/User');
-
-module.exports.login = function (req, res) {
-    res.status(200).json({
-        login: {
-            email: req.body.email,
-            password: req.body.password
-
+const keys = require('../config/keys');
+module.exports.login = async function (req, res) {
+    const candidate = await User.findOne({email: req.body.email});
+    if (candidate) {
+        const passwordResult = bcrypt.compareSync(req.body.password, candidate.password);
+        if (passwordResult) {
+            //generating token passwordn okeya hetevyal filderov
+            const token = jwt.sign({
+                email: candidate.email,
+                userId: candidate._id
+            }, keys.jwt, {expiresIn: 60 * 60});//mi jam
+            res.status(200).json({
+                token: `Bearer ${token}`
+            })
+        } else {
+            res.status(401).json({
+                message: 'passwordnern irar het chen brnel, pordzeq krkin'
+            })
         }
-    });
+    } else {
+        res.status(400).json({
+            message: 'Senc uzer arden ka'
+        })
+    }
+
 };
 
 module.exports.register = async function (req, res) {
