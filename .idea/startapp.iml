@@ -22,5 +22,7 @@
     <orderEntry type="library" name="@types/mongoose-deep-populate" level="application" />
     <orderEntry type="library" name="@types/mocha" level="application" />
     <orderEntry type="library" name="@types/jsonwebtoken" level="application" />
+    <orderEntry type="library" name="@types/passport" level="application" />
+    <orderEntry type="library" name="@types/passport-jwt" level="application" />
   </component>
 </module>
