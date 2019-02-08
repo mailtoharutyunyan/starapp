@@ -4,6 +4,5 @@
     <file url="PROJECT" libraries="{@types/bcryptjs, @types/config, @types/express, @types/express-serve-static-core, @types/jsonwebtoken, @types/mocha, @types/mongodb, @types/mongoose, @types/mongoose-deep-populate, @types/mongoose-promise, @types/multer, @types/node, @types/passport, @types/passport-jwt, @types/require-dir, @types/requirejs, @types/serve-static}" />
     <includedPredefinedLibrary name="HTTP Response Handler" />
     <includedPredefinedLibrary name="Node.js Core" />
-    <excludedPredefinedLibrary name="startapp/node_modules" />
   </component>
 </project>
